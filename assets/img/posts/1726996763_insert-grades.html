@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оценки</title>
+    <style>
+        body {
+            font-family: Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+       .header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 24px;
+        }
+       .container {
+            width: 80%;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+       .form-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+       .form-group label {
+            width: 100%;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+       .form-group input,.form-group select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+       .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+       .button:hover {
+            background-color: #45a049;
+        }
+       .message {
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+       .search-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+       .search-container input {
+            width: 70%;
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+       .search-container button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+       .search-container button:hover {
+            background-color: #45a049;
+        }
+       .student-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+       .student-list li {
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+       .student-list li:hover {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        Внесение оценок
+    </div>
+
+    <div class="container">
+        <h2>Форма для внесения оценки ученику</h2>
+
+        <!-- Добавляем форму -->
+        <form id="student-form">
+            <div class="form-group">
+                <label for="classSelect">Выберите класс:</label>
+                <select id="classSelect">
+                    <option value="">Выберите класс</option>
+                    <option value="1">1 класс</option>
+                    <option value="2">2 класс</option>
+                    <option value="3">3 класс</option>
+                    <option value="4">4 класс</option>
+                    <option value="5">5 класс</option>
+                    <option value="6">6 класс</option>
+                    <option value="7">7 класс</option>
+                    <option value="8">8 класс</option>
+                    <option value="9">9 класс</option>
+                    <option value="10">10 класс</option>
+                    <option value="11">11 класс</option>
+                </select>
+            
+                <label for="studentSelect">Выберите ученика:</label>
+                <select id="studentSelect" disabled>
+                    <option value="">Сначала выберите класс</option>
+                </select>
+
+                <label for="grade">Оценка</label>
+                <select id="grade" name="grade" required>
+                    <option value="">Выберите оценку</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <label for="workType">Тип работы</label>
+                <input type="text" id="workType" name="workType" placeholder="Тип работы (напр. Контрольная)">
+                
+                <label for="subject">Предмет</label>
+                <select id="subject" name="subject" required>
+                    <option value="">Выберите предмет</option>
+                    <option value="mat">Математика</option>
+                    <option value="rus">Русский язык</option>
+                    <option value="ang">Английский язык</option>
+                    <option value="chem">Химия</option>
+                    <option value="bio">Биология</option>
+                    <option value="obsh">Общество</option>
+                    <option value="info">Информатика</option>
+                    <option value="fiz">Физическая культура</option>
+                    <option value="obj">ОБиЗР</option>
+                    <option value="tech">Технология</option>
+                    <option value="izo">Изобразительное исскуство</option>
+                    <option value="phy">Физика</option>
+                    <option value="his">История</option>
+                </select>
+                
+                <label for="date">Дата</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <button type="submit" class="button">Сохранить оценку</button>
+        </form>
+
+        <!-- Блок для сообщений -->
+        <div id="messageDiv" class = "message"></div>
+    </div>
+
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+const classSelect = document.getElementById('classSelect');
+const studentSelect = document.getElementById('studentSelect');
+
+classSelect.addEventListener('change', function() {
+    const selectedClass = this.value;
+    console.log('Выбранный класс:', selectedClass);
+    if (selectedClass) {
+        fetch(`/get-students?classId=${selectedClass}`)
+            .then(response => response.json())
+            .then(students => {
+                console.log('Студенты:', students);
+                populateStudents(students);
+            })
+            .catch(error => console.error('Ошибка:', error));
+    }
+});
+
+function populateStudents(students) {
+    studentSelect.removeAttribute('disabled');
+    studentSelect.innerHTML = ''; // Очищаем список учеников
+    if (Array.isArray(students)) {
+        students.forEach(student => {
+            const option = document.createElement('option');
+            option.text = student;
+            option.value = student;
+            studentSelect.appendChild(option);
+            console.table(students);
+        });
+    } else {
+        const option = document.createElement('option');
+        option.text = students;
+        option.value = students;
+        studentSelect.appendChild(option);
+    }
+} 
+})
+function handleSubmit(event) {
+    event.preventDefault(); // Prevent default form submission
+    const studentForm = document.getElementById('student-form');
+
+    const formData = new FormData(studentForm);
+
+    const studentSelect = document.getElementById('studentSelect');
+    const workTypeInput = document.getElementById('workType');
+    const subjectInput = document.getElementById('subject');
+    const dateInput = document.getElementById('date');
+    const submitButton = event.target.querySelector('button[type="submit"]'); // Получаем кнопку
+
+    // Пакуем данные в FormData
+    formData.append('student', studentSelect.value);
+    formData.append('workType', workTypeInput.value);
+    formData.append('subject', subjectInput.value);
+    formData.append('date', dateInput.value);
+    
+    // Преобразуем FormData в объект
+    const data = {};
+    formData.forEach((value, key) => {
+        data[key] = value;
+    });
+    const messageDiv = document.getElementById('messageDiv'); // Инициализируем здесь
+    if (!messageDiv) {
+        console.error("Element with ID 'messageDiv' not found!");
+        return; // Выход, если элемент не найден
+    }
+    // Изменяем состояние кнопки
+    submitButton.disabled = true;
+    messageDiv.innerText = ''; // Сбрасываем сообщение
+
+    fetch('/insert-grades', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json', // обязательно для JSON
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (!response.ok) {
+            // Обрабатываем ошибку, если статус не успешный
+            throw new Error('Сетевая ошибка: ' + response.statusText);
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Обработка успешного ответа
+        if (data.success) {
+            messageDiv.style.color = '#28a745';
+            messageDiv.innerText = data.message;
+            form.reset(); // Сбрасываем форму после успешной отправки
+        } else {
+            throw new Error(data.message); // Генерируем ошибку для дальнейшей обработки
+        }
+    })
+    .catch(error => {
+        // Обработка ошибки при выполнении запроса или при обработке ответа от сервера
+        messageDiv.style.color = '#d9534f';
+        messageDiv.innerText = 'Ошибка: ' + error.message;
+    })
+    .finally(() => {
+        // Восстанавливаем состояние кнопки
+        submitButton.disabled = false;
+    });
+}
+
+const form = document.getElementById('student-form');
+form.addEventListener('submit', handleSubmit);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,535 @@
+/* global settings*/
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+h1{
+    color: rgb(255, 255, 255);
+}
+body{
+    background-color: #1b1b1b;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+p{
+    color: white;
+}
+/* HEADER */
+
+header{
+    background: rgb(0, 0, 0);
+    height: 50px;
+
+}
+header *{
+    color: rgb(235, 235, 235);
+
+}
+input{
+    border: none;
+    color:black;
+    padding: 5px;
+}
+
+header h1 a:hover{
+    color: rgb(255, 255, 255);
+}
+
+header ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float:right;
+
+}
+header ul li{
+    float: left;
+    background: #000000;   
+    margin-left: 30px;
+}
+
+header ul li a{
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    font-size: 1.25rem;
+    padding: 10px;
+    font-weight: 500;
+
+}
+
+header ul li a:hover{
+    background: #1b1b1b;
+    color: #ffffff;
+    transition: 0.35s;
+   
+}
+
+/* DROPDOWN */
+.drop{
+    color: rgb(235, 235, 235);
+    position: relative;
+    z-index: 12121;
+    display: none;
+    float: right;
+    font-size: 1.25rem;
+}
+.droptoggle{
+    height: 50px;
+    background: #000;
+    border: none;
+    margin: 0;
+    width: 100%;  
+}
+.droptoggle:hover{
+    background: #1b1b1b;
+    color: #ffffff;
+    transition: 0.35s;
+}
+.drop-menu{
+    background: #000000;
+    display: none;
+    flex-direction: column;
+}
+.drop-menu a{
+    padding: 20px;
+}
+.drop-menu a:hover{
+    background: #1b1b1b;
+    color: #ffffff;
+    transition: 0.35s;
+}
+
+/* SLIDER */
+
+.bestquestions-title{
+    color: white;
+    text-align: center;
+    padding: 20px 0px;
+    font-size: 40px;
+}
+.carousel-item img{
+    height: 390px;
+}
+
+.carousel-caption{
+    width: 100%;
+    padding: 0;
+    left: 0;
+    right: 0;
+    bottom: 0rem;
+}
+.carousel-item h5{
+    color: white;
+    background: rgba(0,0,0, 0.7);
+    max-width: 100%;
+    padding: 0.75em;
+    margin: 0;
+}
+.carousel-item h5 a{
+    color: white;
+    font-weight: 500;
+}
+.carousel-item h5 a:hover{
+    text-decoration: underline;
+}
+
+/*SINGLE-POST*/
+.lastquestions-title{
+    color: white;
+    padding-top: 50px;
+    padding-bottom: 10px;
+    font-size: 40px;
+}
+.main-content{
+    color: white;
+}
+.post{
+    padding: 10px 0px;
+    background: rgba(0,0,0, 0.25);
+    margin-top: 10px;
+}
+.post:hover{
+    background: rgba(0,0,0, 0.15);
+    cursor: pointer;
+}
+.img img{
+    border:white solid 1px;
+    max-height: 700px;
+    width: 100%;
+}
+.img-index{
+    height: 150px;
+}
+.post a:hover{
+    text-decoration: underline;
+}
+.post-text{
+    color: white;
+    font-size: 15px;
+
+}
+.about-post{
+    padding-top: 15px;
+    padding-bottom: 10px;
+
+}
+
+.single-post-text{
+    background: rgba(0,0,0, 0.25);
+    margin-top: 10px;
+}
+.question-main-text{
+   
+    padding: 10px;
+}
+.answer-section{
+    margin: 20px 0px;
+}
+.answer-section textarea{
+    width: 80%;
+}
+.answer-section button{
+    width: 15%;
+    background: #1b1b1b;
+    border: none;
+    color: white;
+    padding: 10px;
+    margin-left: 10px;
+    border: white solid 1px;
+}
+.answer-section button:hover{
+    background: rgba(255, 255, 255, 0.05);
+}
+.another-answer-post{
+    padding: 10px;
+    padding-bottom: 0px;
+    background: rgba(0,0,0, 0.25);
+    margin: 10px 0px; 
+}
+.another-answer-post-text{
+    font-size: 1.1rem;
+
+}
+.another-answer-post button{
+    margin: 0;
+}
+.rate-answer{
+    margin-top: 10px;
+}
+.unrated{
+    border: 1px white solid;
+    padding: 10px 12px;
+}
+.unrated:hover{
+    background: #1b1b1b;
+}
+.rated{
+    padding: 10px 12px;
+    background: white;
+    color: #1b1b1b;
+}
+.rated:hover{
+    background: rgb(192, 192, 192);
+}
+.post-title{
+    font-size: 21px;
+    width: 100%;
+    word-break: break-all;
+}
+.lastquestions-title{
+    word-break: break-all;
+}
+.question-main-text{
+    font-size: 20px;
+    word-break: break-all;
+}
+.about-post-p{
+    margin: 0;
+    margin-top: 3px;
+    padding: 0;
+}
+.lastquestions-title{
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+.post-rt{
+    margin-left: 30px;
+}
+.section-info-post{
+    margin-top: 20px;
+}
+.delete-comm{
+    padding: 10px;
+    margin-left: 30px;
+}
+/*SINGLE-POST END*/
+
+/*Сайдбар*/
+
+.sidebar{
+    color: white;
+}
+.sidebar h3{
+    font-size: 30px;
+}
+.search{
+    padding-top: 50px;
+}
+.text-input{
+    width: 100%;
+}
+.topics{
+    padding-top: 30px;
+}
+.topics ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid rgba(0,0,0, 0.25);
+}
+.topics ul li{
+    padding: 5px 3px;
+}
+.topics ul li:hover{
+    background: rgba(0,0,0, 0.25);
+}
+
+.lastquestions-title{
+    padding-top: 25px;
+    
+}
+.lst-qst-ttl{
+    font-size: 30px;
+}
+/*Сайдбар END*/
+/*Функции*/
+
+.functions{
+    padding-top: 60px;
+}
+.functions h3{
+    font-size: 40px;
+    color: white;
+}
+.functions button{
+    background: #1b1b1b;
+    border: none;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+}
+.functions button:hover{
+    background: rgba(0,0,0, 0.25);
+}
+.func{
+display: inline;
+padding-left: 500px;
+align-items: end;
+}
+/*Функции*/
+
+/*Профиль*/
+.profile{
+    color: white;
+    padding-top: 30px;
+    background: rgba(0,0,0, 0.1);
+}
+.profile h2{
+    font-size: 35px;
+}
+.profile-info{
+    padding-top: 10px;
+
+}
+.profile-info ul{
+padding: 10px;
+list-style: none;
+}
+.profile-info ul li{
+    padding: 10px 0px;
+    font-size: 20px;
+}
+.edit-profile{
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.06);
+}
+.edit-profile:hover{
+    color: white;
+    transition: 0.3s;
+}
+.admin-panel{
+    padding: 10px 2px;
+    background: #000;
+    border: 1px solid white;
+}
+.edit-username-button{
+    border: none;
+    background: none;
+    padding: 10px;
+    color: white;
+}
+.edit-username-button:hover{
+    background: rgba(0,0,0, 0.25);
+}
+.profile-textarea{
+    width: 300px;
+}
+.description-user{
+    max-width: 500px;
+    word-break: break-all;
+}
+.cancel-edit{
+    padding: 12px;
+}
+.cancel-edit:hover{
+    background: rgba(0,0,0, 0.25);
+}
+.control-questions{
+    padding: 10px 12px;
+    margin-left: 10px;
+    border: white 1px solid;
+    border-radius: 2px;
+}
+.control-div{
+    margin-top: 30px;
+}
+/*Профиль END*/
+
+/*Создание вопроса*/
+.create-question h2{
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    padding-top: 30px;
+}
+.create-question-form{
+    background: rgba(0,0,0);
+    padding: 10px 60px;
+
+}
+.btn-create-question{
+    background: none;
+    border: none;
+    padding: 10px;
+    color: white;
+    font-size: 25px;
+    margin-left: 82.5%;
+}
+.btn-create-question:hover{
+    background: #1b1b1b;
+}
+.add-img{
+    margin-right: 50%;
+}
+.title-create{
+    width: 100%;
+    font-size: 30px;
+}
+.create-question-form .col{
+    margin-top: 20px; 
+}
+.text-create{
+    font-size: 20px;
+
+    width: 100%;
+}
+.create-question-form select{
+    padding: 5px;
+}
+.to-main-page{
+    color: white;
+    padding: 10px;
+    background: #000;
+    border: white 1px solid;
+    width: 80px;
+    margin-top: 10px;
+}
+
+/*Создание вопроса END*/
+/*FOOTER*/
+.footer{
+    color: white;
+    margin-top: 10px;
+    background: #000;
+    padding-top: 30px;
+}
+.footer-section{
+    padding-bottom: 20px;
+}
+.socials{
+    width: 100%;
+    align-items: center;
+    margin-top: 10px;
+}
+.socials a{
+    padding: 7.5px;
+    border: white solid 1px;
+    
+}
+.contact-form input{
+
+    border-bottom: black solid 1px;
+}
+.contact-form textarea{
+
+margin-top: 5px;
+}
+
+.contact-btn{
+    color: white;
+    background: #000;
+    border: none;
+    padding: 10px;
+}
+.contact-btn:hover{
+    background: #1b1b1b;
+}
+.footer-bottom{
+    background: #1b1b1b;
+    text-align: center;
+    padding: 30px 0px;
+    color: white;
+    font-size: 1.1rem;
+
+}
+
+/*FOOTER END*/
+
+/* MEDIA-запросы */
+
+@media (max-width: 1240px) {
+    .carousel-item img{
+        height: 300px;
+    }
+    .drop{
+        display:block;
+
+    }
+    .panel{
+        display: none;
+    }
+}
+@media (max-width: 1000px){
+    .carousel-item img{
+        height: 200px;
+    }
+    h1{
+        padding: 5px;
+    }
+}
+@media (max-width: 767px){
+    .carousel-item img{
+        height: 150px;
+    }
+    .carousel{
+        display: none;
+    }
+}
+
+
+
+

@@ -1,0 +1,21 @@
+
+.footer-bottom{
+    background: #1b1b1b;
+    text-align: center;
+    padding: 30px 0px;
+    color: white;
+    font-size: 1.1rem;
+
+}
+.err{
+    color: red;
+    font-style: italic;
+}
+.reg-form h2{
+    text-align: center;
+    margin: 30px 0px;
+}
+.reg-form a{
+    margin-left: 20px;
+}
+

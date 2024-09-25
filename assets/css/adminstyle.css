@@ -1,0 +1,99 @@
+body {
+    background: #1b1b1b;
+    color: white;
+}
+h1{
+    text-align: center;
+    padding-top: 20px;
+}
+.create-topic-input{
+    margin-top: 10px;
+    padding: 5px;
+}
+.create-topic-button{
+    background: none;
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+    margin-left: 10px;
+}
+.create-topic-button:hover{
+    background: #1b1b1b;
+}
+.welcome{
+    text-align: center;
+}
+.exit-panel{
+    margin-top: 20px;
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    width: 10.5%;
+
+}
+.errortext{
+    color: red;
+    font-style: italic;
+}
+.add-topic-button{
+    margin-left: 10px;
+    width: 12.5%;
+}
+.sidebar{
+    background: rgba(0,0,0, 0.5);
+    
+}
+.sidebar ul{
+    list-style: none;
+    padding: 20px 0px;
+    margin: 0;
+}
+.sidebar ul li{
+    padding: 20px 0px;
+}
+.sidebar ul a{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+
+}
+.sidebar ul li:hover{
+    transition: 0.3s;
+    background: #1b1b1b;
+}
+
+
+
+.posts{
+    background: rgba(0,0,0, 0.5);
+    margin-left: 0px;
+}
+.table-posts{
+    margin-right: 12px;
+}
+.title-table{
+    background: #000;
+    padding: 5px 0px;
+    font-weight: 700;
+}
+.table-posts{
+    text-align: center;
+}
+.posts h2{
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+}
+.post{
+    padding: 10px 0px;
+    border-bottom: 1px black solid;
+}
+
+.post a{
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
